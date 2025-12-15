@@ -31,17 +31,6 @@ public class Radio {
         setRadioWave(radioWave - 1);
     }
 
-    public void setRadioVolume(int newRadioVolume) {
-        if (newRadioVolume < 0) {
-
-            return;
-        }
-        if (newRadioVolume > 100) {
-
-            return;
-        }
-        radioVolume = newRadioVolume;
-    }
 
     public void increaseRadioVolume() {
         if (radioVolume < 100) {
