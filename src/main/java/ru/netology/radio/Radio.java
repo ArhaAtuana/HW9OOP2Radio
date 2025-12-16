@@ -9,6 +9,10 @@ public class Radio {
         return radioWave;
     }
 
+    public int getCurrentRadioVolume() {
+        return radioVolume;
+    }
+
     public void setRadioWave(int newRadioWave) {
         if (newRadioWave < 0) {
             radioWave = 9;
@@ -23,6 +27,7 @@ public class Radio {
         radioWave = newRadioWave;
     }
 
+
     public void nextRadioWave() {
         setRadioWave(radioWave + 1);
     }
@@ -32,9 +37,21 @@ public class Radio {
     }
 
 
+    public void setRadioVolume(int newRadioVolume) {
+        if (newRadioVolume < 0) {
+            radioVolume = 0;
+            return;
+        }
+        if (newRadioVolume > 100) {
+            radioVolume = 100;
+            return;
+        }
+        radioVolume = newRadioVolume;
+    }
+
     public void increaseRadioVolume() {
         if (radioVolume < 100) {
-            radioVolume += 1;
+            radioVolume = radioVolume + 1;
         }
     }
 
