@@ -4,6 +4,13 @@ public class Radio {
 
     private int radioWave;
     private int radioVolume;
+    private int numberOfWavesPossible = 10;
+
+    public Radio() {}
+
+    public Radio(int numberOfWavesPossible) {
+        this.numberOfWavesPossible = numberOfWavesPossible;
+    }
 
     public int getCurrentRadioWave() {
         return radioWave;
@@ -15,17 +22,18 @@ public class Radio {
 
     public void setRadioWave(int newRadioWave) {
         if (newRadioWave < 0) {
-            radioWave = 9;
+            radioWave = numberOfWavesPossible -1;
 
             return;
         }
-        if (newRadioWave > 9) {
+        if (newRadioWave > numberOfWavesPossible -1) {
             radioWave = 0;
 
             return;
         }
         radioWave = newRadioWave;
     }
+
 
 
     public void nextRadioWave() {

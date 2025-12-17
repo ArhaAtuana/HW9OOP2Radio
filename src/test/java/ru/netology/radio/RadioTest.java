@@ -7,6 +7,36 @@ import org.junit.jupiter.api.Test;
 public class RadioTest {
 
     @Test
+    public void shouldSetFlexibleRadioWave() {
+        Radio radio = new Radio(30);
+
+        radio.setRadioWave(27);
+
+        Assertions.assertEquals(27, radio.getCurrentRadioWave());
+
+    }
+
+    @Test
+    public void shouldNotSetFlexibleRadioWaveAboveMax() {
+        Radio radio = new Radio(30);
+
+        radio.setRadioWave(30);
+
+        Assertions.assertEquals(0, radio.getCurrentRadioWave());
+
+    }
+
+    @Test
+    public void shouldNotSetFlexibleRadioWaveBelowZero() {
+        Radio radio = new Radio(30);
+
+        radio.setRadioWave(-1);
+
+        Assertions.assertEquals(29, radio.getCurrentRadioWave());
+
+    }
+
+    @Test
     public void shouldSetRadioWave() {
         Radio radio = new Radio();
 
